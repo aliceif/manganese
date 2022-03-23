@@ -8,13 +8,13 @@ manganese.o: manganese.c
 	cc $(CFLAGS) -c manganese.c
 
 tests-512.o: tests-512.c tests-512.h
-	cc $(CFLAGS) -mrdrnd -mavx512bw -c tests-512.c
+	cc $(CFLAGS) -mrdrnd -mavx512bw -c tests-512.c -IOpenBLAS
 
 tests-256.o: tests-256.c tests-256.h
-	cc $(CFLAGS) -mrdrnd -mavx2 -c tests-256.c
+	cc $(CFLAGS) -mrdrnd -mavx2 -c tests-256.c -IOpenBLAS
 
 tests.o: tests.c tests.h
-	cc $(CFLAGS) -c tests.c
+	cc $(CFLAGS) -c tests.c -IOpenBLAS
 
 hardware.o: hardware.c hardware.h
 	cc $(CFLAGS) -c hardware.c
